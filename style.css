@@ -1,0 +1,127 @@
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #082032;
+}
+
+.visually-hidden { 
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%); 
+    white-space: nowrap; 
+}
+.container{
+    width: 100%;
+    max-width: 1230px;
+    padding: 20px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-title{
+    color: #035397;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+/* Form styles  */
+.input-checkbox__control{
+    display: inline-flex;
+    align-items: center;
+    color: #035397;
+    font-size: 20px;
+}
+
+.input-checkbox__control::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #035397;
+    margin-right: 5px;
+}
+
+.input-checkbox:checked ~ .input-checkbox__control::before{
+    background-color: #035397;
+}
+
+/* Card Styles  */
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: -25px;
+    margin-bottom: -25px;
+}
+
+.card{
+    width: 300px;
+    padding: 10px 10px 25px;
+    background-color: #0A1931;
+    border-radius: 12px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.image-box{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    background-color: #1F4068;
+}
+
+.card-title{
+    color: #548CA8;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card-p{
+    border-radius: 25px;
+    padding: 5px 15px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: inline-block;   
+}
+.card-year{    
+    background-color: #1F4068;
+}
+
+.card-price{
+    background-color: #334257;
+}
+
+.card-buy{
+    width: 100%;
+    padding: 5px 15px;
+    background-color: #035397;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+}
+.card-buy:active{
+    transform: scale(0.99);
+}
