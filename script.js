@@ -1,6 +1,10 @@
 let filterCards = {
     radios: [
         {
+            name: "all",
+            text: "All"
+        },
+        {
             name:"phone",
             text: "Modern Smartphones",
         },
@@ -82,6 +86,8 @@ const cardContainer = document.querySelector(".card-container");
 const radioTemplate = document.querySelector(".radio-template").content;
 const cardTemplate = document.querySelector(".card-template").content;
 
+// Create Dinamic Elements
+
 function createRadio(radio){
     const elRadio = radioTemplate.cloneNode(true);
     elRadio.querySelector(".input-radio").value = radio.name;
@@ -111,3 +117,28 @@ filterCards.cards.forEach((card)=>{
 })
 
 cardContainer.appendChild(cardFrame);
+
+// Filter Script Codes
+
+siteForm.addEventListener("click", evt =>{
+    let elCards = document.querySelectorAll(".card")
+    elCards.forEach(elCard =>{
+        if(evt.target.matches("input")){
+            evt.target.addEventListener("change",function(){
+                if (evt.target.value != "all") {
+                    for (let c of elCards){
+                        if(!c.classList.contains(evt.target.value)){
+                            c.classList.add("none")
+                        }
+                        if(c.classList.contains(evt.target.value)){
+                            c.classList.remove("none")
+                        }                         
+                    }                              
+                }
+                if(evt.target.value == "all") {
+                    elCard.classList.remove("none")
+                }
+            })
+        }
+    })    
+})
