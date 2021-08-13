@@ -46,14 +46,26 @@ body{
 }
 
 /* Form styles  */
-.input-checkbox__control{
+.site-form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    margin-bottom: 25px;
+}
+.radio{
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.input-radio__control{
     display: inline-flex;
     align-items: center;
     color: #035397;
     font-size: 20px;
 }
 
-.input-checkbox__control::before{
+.input-radio__control::before{
     content: "";
     width: 20px;
     height: 20px;
@@ -61,7 +73,7 @@ body{
     margin-right: 5px;
 }
 
-.input-checkbox:checked ~ .input-checkbox__control::before{
+.input-radio:checked  ~ .input-radio__control::before{
     background-color: #035397;
 }
 
